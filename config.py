@@ -1,12 +1,12 @@
 DATA_FILES = [
     # "C:\\Users\\Adam\\Documents\\Materialy_pw\\PW\\MSI2\\Data\\ks-projects-201612.csv",
-    "C:\\Users\\Adam\\Documents\\Materialy_pw\\PW\\MSI2\\Data\\ks-projects-201801.csv"
+    "C:\\Users\\wpiot\\PycharmProjects\\KickstarterPredictions\\test_data\\ks-projects-201801.csv"
 ]
 
 DATA_COLUMNS = [
     # 'ID', #just id
     # 'name', # just name
-    'category',
+    # 'category',
     'main_category',
     'currency',
     'deadline',
