@@ -13,6 +13,8 @@ def load_data():
 	data.launched = pd.to_datetime(data.launched)
 	data.deadline = pd.to_datetime(data.deadline)
 	data['duration'] = scale((data.deadline - data.launched).dt.days)
+	data = data.drop('deadline', axis=1)
+	data = data.drop('launched', axis=1)
 	print(data.head())
 	return data
 

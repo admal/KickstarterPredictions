@@ -1,7 +1,7 @@
 from data import *
 import operator
 from sklearn.cross_validation import train_test_split
-
+from xgbclassifier import XGBstart
 
 def main():
 	data = load_data()
@@ -50,6 +50,8 @@ def main():
 	                                                    test_size=0.1,
 	                                                    random_state=2,
 	                                                    stratify=y)
+
+	XGBstart(X_train, y_train, X_test, y_test)
 
 
 if __name__ == '__main__':
