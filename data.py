@@ -15,20 +15,23 @@ def load_data():
     data.launched = pd.to_datetime(data.launched)
     data.deadline = pd.to_datetime(data.deadline)
     data['duration'] = scale((data.deadline - data.launched).dt.days)
+    data['goal'] = scale(data['goal'])
     data = data.drop('deadline', axis=1)
     data = data.drop('launched', axis=1)
 
     many_words = data['state'].unique()
-    for word in many_words:
-        if word != 'successful':
-            data['state'] = np.where(data['state'] == word, 'failed', data['state'])
+    # for word in many_words:
+    #     if word != 'successful':
+    #         data['state'] = np.where(data['state'] == word, 'failed', data['state'])
 
+    approved_states = ['failed', 'successful']
+    data = data[data['state'].isin(approved_states)]
+    data_shuffle = data.iloc[np.random.permutation(len(data))]
+    data = data_shuffle.reset_index(drop=True)
+    for category in CATEGORY_COLUMNS:
+        data[category] = data[category].astype('category')
 
-    print(data.head())
     return data
-
-
-
 
 
 # we want continous vars that are integers for our input data, so lets remove any categorical vars

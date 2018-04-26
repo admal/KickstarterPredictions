@@ -6,7 +6,7 @@ DATA_FILES = [
 DATA_COLUMNS = [
     # 'ID', #just id
     # 'name', # just name
-    # 'category',
+    'category',
     'main_category',
     'currency',
     'deadline',
@@ -17,4 +17,10 @@ DATA_COLUMNS = [
     # 'backers', # in initial state of a project there is no information about backers
     'country',
     # 'usd pledged' # in initial state of a project there is no information about pledged money
+]
+CATEGORY_COLUMNS = [
+    'category',
+    'main_category',
+    'currency',
+    'country'
 ]
