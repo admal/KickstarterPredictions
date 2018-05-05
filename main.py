@@ -2,6 +2,8 @@ from data import *
 import operator
 from sklearn.cross_validation import train_test_split
 
+from regression import run_regression
+
 
 def main():
 	data = load_data()
@@ -51,6 +53,10 @@ def main():
 	                                                    random_state=2,
 	                                                    stratify=y)
 
+	f1, acc = run_regression(X_train, y_train, X_test, y_test)
+	print("Test")
+	print(f1)
+	print(acc)
 
 if __name__ == '__main__':
 	main()
