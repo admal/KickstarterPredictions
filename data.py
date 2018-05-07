@@ -13,6 +13,10 @@ def load_data():
 	data.launched = pd.to_datetime(data.launched)
 	data.deadline = pd.to_datetime(data.deadline)
 	data['duration'] = scale((data.deadline - data.launched).dt.days)
+	data['goal'] = scale(data['goal'])
+	data = data.drop(['launched'], 1)
+	data = data.drop(['deadline'], 1)
+	data = data[(data.state=='successful') | (data.state == 'failed')]
 	print(data.head())
 	return data
 
