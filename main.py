@@ -3,6 +3,7 @@ import operator
 from sklearn.cross_validation import train_test_split
 
 from regression import run_regression
+from xgbclassifier import run_xgboost
 
 
 def main():
@@ -57,6 +58,7 @@ def main():
 	print("Test")
 	print(f1)
 	print(acc)
+	xgboost_classifier = run_xgboost(X_train, y_train, X_test, y_test)
 
 if __name__ == '__main__':
 	main()
