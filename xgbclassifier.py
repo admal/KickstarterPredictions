@@ -4,7 +4,7 @@ from sklearn.metrics import f1_score
 
 
 def run_xgboost(X, y, X_test, y_test):
-    clf = xgb.XGBClassifier()
+    clf = xgb.XGBClassifier(max_depth=24, learning_rate=0.05, silent=False, random_state=997, n_estimators=200)
     
     clf.fit(X, y)
 
