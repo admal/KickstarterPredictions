@@ -8,11 +8,6 @@ from xgbclassifier import run_xgboost
 import numpy as np
 
 
-# 20 powtórzeń
-# zweryfikować skit.train_test_split()
-# zobaczyc w kagglu w discussion czy ktoś to lepiej zrobił i jak
-# opracowanie statystyczne
-
 def main():
     data = load_data()
     total_data = len(data)
