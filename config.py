@@ -1,5 +1,4 @@
 DATA_FILES = [
-    # "C:\\Users\\Adam\\Documents\\Materialy_pw\\PW\\MSI2\\Data\\ks-projects-201612.csv",
     "C:\\Users\\Adam\\Documents\\Materialy_pw\\PW\\MSI2\\Data\\ks-projects-201801.csv"
 ]
 
